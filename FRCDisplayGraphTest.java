@@ -103,14 +103,14 @@ public class FRCDisplayGraphTest extends Application
 			}
 		});
 		GridPane.setConstraints(teamTwoField, 1, 1);
-                int[] rankArray = rankArray(teamTwoNum, 2010);
-                for(int i = 0; i < rankArray.length; i++)
-                {
-                    System.out.println(rankArray[i]);
-                }
-		LineChart lineChart;
-                lineChart = buildLineCharts(2010, rankArray);
-		GridPane.setConstraints(lineChart, 1,2);
+                int[] rankArray1 = rankArray(teamOneNum, 2010);
+		LineChart lineChart1;
+                lineChart1 = buildLineCharts(2010, rankArray1);
+		GridPane.setConstraints(lineChart1, 1,2);
+                int[] rankArray2 = rankArray(teamTwoNum, 2010);
+		LineChart lineChart2;
+                lineChart2 = buildLineCharts(2010, rankArray2);
+		GridPane.setConstraints(lineChart2, 0,2);
 
 		//CINDY PUT CODE HERE I THINK
 
@@ -120,7 +120,7 @@ public class FRCDisplayGraphTest extends Application
 
 
 		GridPane gp = new GridPane();
-		gp.getChildren().addAll(teamone, teamtwo, teamOneField, teamTwoField, lineChart);
+		gp.getChildren().addAll(teamone, teamtwo, teamOneField, teamTwoField, lineChart1, lineChart2);
 		return gp;
 	}
 
