@@ -115,6 +115,19 @@ public class FRCDisplayGraphTest extends Application
 			}
 		});
 		GridPane.setConstraints(teamTwoField, 1, 1);
+                int[] rankArray = rankArray(teamTwoNum, 2010);
+                for(int i = 0; i < rankArray.length; i++)
+                {
+                    System.out.println(rankArray[i]);
+                }
+		LineChart lineChart;
+                lineChart = buildLineCharts(teamTwoNum, 2010, rankArray);
+		GridPane.setConstraints(lineChart, 1,2);
+
+		//CINDY PUT CODE HERE I THINK
+
+
+
 
                 HBox graphBox = new HBox();
                 team1GraphBox = new VBox();
@@ -145,7 +158,7 @@ public class FRCDisplayGraphTest extends Application
             teamTwoField.setMaxWidth(250);
         }
 
-	public LineChart buildLineCharts(int rookie, int[] rankingArray)
+	public LineChart buildLineCharts(int team, int rookie, int[] rankingArray)
 	{
 		//defining the axes
 		final NumberAxis xAxis = new NumberAxis(rookie, 2019, 1);
@@ -156,7 +169,7 @@ public class FRCDisplayGraphTest extends Application
 		//creating the chart
 		final LineChart<Number,Number> lineChart =
 		new LineChart<Number,Number>(xAxis,yAxis);
-		//lineChart.setTitle("") need team name for this? 
+		lineChart.setTitle(String.valueOf(int)) 
 
 		//defining a series
 		XYChart.Series series = new XYChart.Series();
