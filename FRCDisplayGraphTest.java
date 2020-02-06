@@ -127,10 +127,11 @@ public class FRCDisplayGraphTest extends Application
 	public LineChart buildLineCharts(int rookie, int[] rankingArray)
 	{
 		//defining the axes
-		final NumberAxis xAxis = new NumberAxis();
-		final NumberAxis yAxis = new NumberAxis();
+		final NumberAxis xAxis = new NumberAxis(rookie, 2019, 1);
+		final NumberAxis yAxis = new NumberAxis(0,60,1);
 		xAxis.setLabel("Year");
 		yAxis.setLabel("Average District Ranking");
+		
 
 		//creating the chart
 		final LineChart<Number,Number> lineChart =
