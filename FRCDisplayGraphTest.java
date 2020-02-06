@@ -24,6 +24,7 @@ public class FRCDisplayGraphTest extends Application
 	private Canvas c;
 	private int teamOneNum;
 	private int teamTwoNum;
+        private Stage primary;
 	public FRCDisplayGraphTest()
 	{
 		c = new Canvas(500,500);
@@ -95,6 +96,11 @@ public class FRCDisplayGraphTest extends Application
 					String initial = teamTwoField.getText();
 					System.out.println("\n"+initial);
 					teamTwoNum = Integer.parseInt(initial);
+                                        int[] rankArray = rankArray(teamTwoNum, 2010);
+                                        LineChart lineChart = buildLineCharts(2010, rankArray);
+                                        Scene scene = new Scene(lineChart, 800, 800);
+                                        primary.setScene(scene);
+                                        primary.show();
 				}
 				catch (Exception e) {
 
@@ -139,4 +145,19 @@ public class FRCDisplayGraphTest extends Application
 		
                 return lineChart;
 	}
+
+	private static int[] rankArray(int teamNum, int teamRookieYear) {
+		int[] rankArray = new int[2020-teamRookieYear];
+		try {
+			for(int i = teamRookieYear; i < 2020; i++) {
+				
+				rankArray[i-teamRookieYear] = (int)(Math.random() * 50 + 1);
+				for(int j = 0; j < rankArray.length; j++) System.out.println(rankArray[j]);
+				//rankArray[i-teamRookieYear] = getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/%d", i, teamNum)));
+				//System.out.println(getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/??teamNumber=%d??", i, teamNum))));
+
+			}
+		} catch (Exception e) {}
+		return null;
+	}	
 }

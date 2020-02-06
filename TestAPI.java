@@ -82,7 +82,7 @@ public class TestAPI
 		try {
 			for(int i = teamRookieYear; i < 2020; i++) {
 				
-				rankArray[i-teamRookieYear] = i-teamRookieYear+1;
+				rankArray[i-teamRookieYear] = (int)(Math.random() * 50 + 1);
 				for(int j = 0; j < rankArray.length; j++) System.out.println(rankArray[j]);
 				//rankArray[i-teamRookieYear] = getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/%d", i, teamNum)));
 				//System.out.println(getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/??teamNumber=%d??", i, teamNum))));
