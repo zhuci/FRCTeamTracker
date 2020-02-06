@@ -104,6 +104,10 @@ public class FRCDisplayGraphTest extends Application
 		});
 		GridPane.setConstraints(teamTwoField, 1, 1);
                 int[] rankArray = rankArray(teamTwoNum, 2010);
+                for(int i = 0; i < rankArray.length; i++)
+                {
+                    System.out.println(rankArray[i]);
+                }
 		LineChart lineChart;
                 lineChart = buildLineCharts(2010, rankArray);
 		GridPane.setConstraints(lineChart, 1,2);
@@ -140,6 +144,7 @@ public class FRCDisplayGraphTest extends Application
 			series.getData().add(new XYChart.Data(rookie + i , rankingArray[i]));
 		}
 		lineChart.getData().add(series);
+                System.out.println(1);
 		
 		
                 return lineChart;
@@ -151,12 +156,12 @@ public class FRCDisplayGraphTest extends Application
 			for(int i = teamRookieYear; i < 2020; i++) {
 				
 				rankArray[i-teamRookieYear] = (int)(Math.random() * 50 + 1);
-				for(int j = 0; j < rankArray.length; j++) System.out.println(rankArray[j]);
+				//for(int j = 0; j < rankArray.length; j++) System.out.println(rankArray[j]);
 				//rankArray[i-teamRookieYear] = getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/%d", i, teamNum)));
 				//System.out.println(getJSONRequest(new URL(String.format("https://frc-api.firstinspires.org/v2.0/%d/rankings/district/??teamNumber=%d??", i, teamNum))));
 
 			}
 		} catch (Exception e) {}
-		return null;
+		return rankArray;
 	}	
 }
