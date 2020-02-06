@@ -169,7 +169,7 @@ public class FRCDisplayGraphTest extends Application
 		//creating the chart
 		final LineChart<Number,Number> lineChart =
 		new LineChart<Number,Number>(xAxis,yAxis);
-		lineChart.setTitle(String.valueOf(int)) 
+		lineChart.setTitle("Team " + String.valueOf(team)); 
 
 		//defining a series
 		XYChart.Series series = new XYChart.Series();
