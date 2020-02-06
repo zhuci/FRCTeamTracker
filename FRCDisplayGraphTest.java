@@ -96,11 +96,6 @@ public class FRCDisplayGraphTest extends Application
 					String initial = teamTwoField.getText();
 					System.out.println("\n"+initial);
 					teamTwoNum = Integer.parseInt(initial);
-                                        int[] rankArray = rankArray(teamTwoNum, 2010);
-                                        LineChart lineChart = buildLineCharts(2010, rankArray);
-                                        Scene scene = new Scene(lineChart, 800, 800);
-                                        primary.setScene(scene);
-                                        primary.show();
 				}
 				catch (Exception e) {
 
@@ -108,6 +103,10 @@ public class FRCDisplayGraphTest extends Application
 			}
 		});
 		GridPane.setConstraints(teamTwoField, 1, 1);
+                int[] rankArray = rankArray(teamTwoNum, 2010);
+		LineChart lineChart;
+                lineChart = buildLineCharts(2010, rankArray);
+		GridPane.setConstraints(lineChart, 1,2);
 
 		//CINDY PUT CODE HERE I THINK
 
@@ -117,7 +116,7 @@ public class FRCDisplayGraphTest extends Application
 
 
 		GridPane gp = new GridPane();
-		gp.getChildren().addAll(teamone, teamtwo, teamOneField, teamTwoField);
+		gp.getChildren().addAll(teamone, teamtwo, teamOneField, teamTwoField, lineChart);
 		return gp;
 	}
 
