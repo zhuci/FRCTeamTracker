@@ -89,7 +89,7 @@ public class FRCDisplayGraphTest extends Application
 					System.out.println("\n"+initial);
 					teamOneNum = Integer.parseInt(initial);
                                         int[] rankArray = rankArray(teamOneNum, 2010);
-                                        createGraph(rankArray, 0);
+                                        createGraph(teamOneNum, rankArray, 0);
 				}
 				catch (Exception e) {
 
@@ -106,7 +106,7 @@ public class FRCDisplayGraphTest extends Application
 					System.out.println("\n"+initial);
 					teamTwoNum = Integer.parseInt(initial);
                                         int[] rankArray = rankArray(teamTwoNum, 2010);
-                                        createGraph(rankArray, 1);
+                                        createGraph(teamTwoNum, rankArray, 1);
 				}
 				catch (Exception e) {
                                     e.printStackTrace();
@@ -141,10 +141,10 @@ public class FRCDisplayGraphTest extends Application
 		return gp;
 	}
 
-        private void createGraph(int[] data, int location)
+        private void createGraph(int team, int[] data, int location)
         {
             LineChart lineChart;
-            lineChart = buildLineCharts(2010, data);
+            lineChart = buildLineCharts(team, 2010, data);
             if(location == 1)
             {
                 team2GraphBox.getChildren().clear();
