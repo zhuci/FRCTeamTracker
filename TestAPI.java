@@ -24,7 +24,7 @@ public class TestAPI
 		int rookieYear;
 
 		try {
-			url = new URL("https://frc-api.firstinspires.org/v2.0/2019/teams?teamNumber=" + "900" + "????");
+			url = new URL("https://frc-api.firstinspires.org/v2.0/2019/teams?teamNumber=" + "900" + "????page=2");
 		}
 		catch (MalformedURLException ex)
 		{
@@ -32,7 +32,8 @@ public class TestAPI
 			return;
 		}
 
-		rankArray(900,2002);
+                System.out.println(getJSONRequest(url));
+		//rankArray(900,2002);
 	}
 
 	static String getInputString()
